@@ -656,7 +656,7 @@ body {
 <?php if (isset($boardinfo['BIOSVendor'])) : ?>
 	<tr>
 	<td><?php __('BIOS Version'); ?></td>
-	<td><?php echo $boardinfo['BIOSVendor'] . " " . $boardinfo['BIOSVersion'] . " " . $boardinfo['BIOSDate'];?></td>
+	<td><?php echo $boardinfo['BIOSVendor'] . " " . $boardinfo['BIOSDate'];?></td>
 	<td><?php __('Board Vendor'); ?></td>
 	<td><?php echo $boardinfo['boardVendor'] . " " . $boardinfo['boardName'] . " " . $boardinfo['boardVersion'];?></td>
 	</tr>
