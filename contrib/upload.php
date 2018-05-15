@@ -129,10 +129,15 @@ document.getElementById('drag-text').addEventListener('click', function() {
 
 document.getElementById('drag-file').addEventListener('change', function() {
 	var files = document.getElementById('drag-file').files;
+    var maxsize = 1024 * 1024 * <?php echo min(intval(ini_get('post_max_size')), intval(ini_get('upload_max_filesize'))) ?>;
 	if(files.length == 0){
 		alert('文件不存在, 请重试');
 		return false;
 	}
+    if(files[0].size >= maxsize) {
+        alert('文件过大(大于 ' + maxsize + ')，取消上传');
+        return false;
+    }
 
 	var data = new FormData();
 	data.append('photo', files[0]);
