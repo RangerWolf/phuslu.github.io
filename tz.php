@@ -694,9 +694,9 @@ body {
 	, <?php __('Free'); ?> <span id="meminfo_Free" class="text-info"><?php echo $meminfo['memFree'];?></span>
 	, <?php __('Percent'); ?> <span id="meminfo_UsedPercent"><?php echo $meminfo['memUsedPercent'];?></span>%<br>
 	<div class="progress">
-	<div id="meminfo_UsedBar" class="progress-bar progress-bar-success" role="progressbar" style="width:<?php echo $meminfo['memUsedPercent'];?>%" ></div>
+	<div id="meminfo_UsedBar" class="progress-bar progress-bar-warning" role="progressbar" style="width:<?php echo $meminfo['memUsedPercent'];?>%" ></div>
 	<div id="meminfo_BuffersBar" class="progress-bar progress-bar-info" role="progressbar" style="width:<?php echo $meminfo['memBuffersPercent'];?>%" ></div>
-	<div id="meminfo_CachedBar" class="progress-bar progress-bar-warning" role="progressbar" style="width:<?php echo $meminfo['memCachedPercent'];?>%" ></div>
+	<div id="meminfo_CachedBar" class="progress-bar progress-bar-success" role="progressbar" style="width:<?php echo $meminfo['memCachedPercent'];?>%" ></div>
 	</div>
 <?php if($meminfo['swapTotal']>0): ?>
 	SWAP：<span id="meminfo_swapTotal"><?php echo $meminfo['swapTotal'];?></span>
