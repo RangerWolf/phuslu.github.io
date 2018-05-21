@@ -583,7 +583,7 @@ body {
 	<tr>
 	<th><a href="?method=phpinfo">PHP Info</a></th>
 	<th><a href="/files/"><?php __('Download'); ?></a></th>
-	<th><a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>/zh-CN/app/search/search"><?php __('Gateway'); ?></a></th>
+	<th><a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>"><?php __('Gateway'); ?></a></th>
 	<th><a href="//grafana.<?php echo $_SERVER['HTTP_HOST'];?>/dashboard/db/system-overview?orgId=1"><?php __('Monitor'); ?></a></th>
 	</tr>
 </table>
