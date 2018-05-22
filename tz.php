@@ -375,15 +375,12 @@ function get_boardinfo()
 		$info['boardVersion'] = '';
 	}
 
-	if ($dirs=glob('/sys/class/block/s*'))
+	if ($names=array_filter(scandir("/dev/disk/by-id"), function($k) { return $k[0] != '.' && strpos($k, 'DVD-ROM') === false; }))
 	{
-		$info['diskModel'] = array_shift(file($dirs[0].'/device/model', FILE_IGNORE_NEW_LINES));
-		$info['diskVendor'] = array_shift(file($dirs[0].'/device/vendor', FILE_IGNORE_NEW_LINES));
-	}
-	else if ($dirs=glob('/sys/class/block/mmc*'))
-	{
-		$info['diskModel'] = trim(array_shift(file($dirs[0].'/device/name')));
-		$info['diskVendor'] = trim(array_shift(file($dirs[0].'/device/type')));
+		$parts = explode("_", array_shift($names));
+		$parts = explode("-", array_shift($parts), 2);
+		$info['diskVendor'] = strtoupper($parts[0]);
+		$info['diskModel'] = $parts[1];
 	}
 
 	return $info;
