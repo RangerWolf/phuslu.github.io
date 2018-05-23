@@ -676,8 +676,8 @@ body {
 	<span id="stat_softirq">0.0</span> softirq,
 	<span id="stat_steal">0.0</span> steal
 	<div class="progress">
-	<div id="stat_UserBar" class="progress-bar progress-bar-success" role="progressbar" style="width:1px" >&nbsp;</div>
-	<div id="stat_SystemBar" class="progress-bar progress-bar-warning" role="progressbar" style="width:0px" >&nbsp;</div>
+	<div id="stat_UserBar" class="progress-bar progress-bar-success" role="progressbar" style="width:1px" ></div>
+	<div id="stat_SystemBar" class="progress-bar progress-bar-warning" role="progressbar" style="width:0px" ></div>
 	</div>
 	</td>
 	</tr>
