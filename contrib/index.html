@@ -1,23 +1,23 @@
 <html><head><title>Index of /</title></head><body><pre>
-<a href="adev.py">adev.py</a>	02-Apr-2018 14:33 2.6K
-<a href="demoserver.service">demoserver.service</a>	02-Apr-2018 14:33 327
-<a href="Dockerfile">Dockerfile</a>	02-Apr-2018 14:33 2.4K
-<a href="getroot.c">getroot.c</a>	02-Apr-2018 14:33 3.6K
-<a href="getstatusoutput.py">getstatusoutput.py</a>	02-Apr-2018 14:33 3.8K
-<a href="guestbook.php">guestbook.php</a>	02-Apr-2018 14:33 9.9K
-<a href="httpsserver.py">httpsserver.py</a>	02-Apr-2018 14:33 743
-<a href="IR_Black.terminal">IR_Black.terminal</a>	02-Apr-2018 14:33 15K
-<a href="octicons.css">octicons.css</a>	02-Apr-2018 14:33 113K
-<a href="Preferences.sublime-settings">Preferences.sublime-settings</a>	02-Apr-2018 14:33 391
-<a href="pychrome_demo.py">pychrome_demo.py</a>	02-Apr-2018 14:33 6.6K
-<a href="pychrome_for_tianyancha.py">pychrome_for_tianyancha.py</a>	02-Apr-2018 14:33 6.4K
-<a href="random_words.py">random_words.py</a>	02-Apr-2018 14:33 686
-<a href="rdpproxy.go">rdpproxy.go</a>	02-Apr-2018 14:33 1.5K
-<a href="SFTP.sublime-settings">SFTP.sublime-settings</a>	28-Apr-2018 18:42 89
-<a href="stunnel.conf">stunnel.conf</a>	02-Apr-2018 14:33 467
-<a href="upload.php">upload.php</a>	15-May-2018 19:17 4.0K
-<a href="octicons-css.py">octicons-css.py</a>	02-Apr-2018 14:33 1.7K
-<a href="sshd_pam_exec.sh">sshd_pam_exec.sh</a>	02-Apr-2018 14:33 709
+<a href="adev.py">adev.py</a>	01-Mar-2013 18:42 2.6K
+<a href="demoserver.service">demoserver.service</a>	08-Aug-2017 15:53 327
+<a href="Dockerfile">Dockerfile</a>	31-Jan-2018 17:57 2.4K
+<a href="getroot.c">getroot.c</a>	10-May-2017 19:46 3.6K
+<a href="getstatusoutput.py">getstatusoutput.py</a>	12-May-2017 16:41 3.8K
+<a href="guestbook.php">guestbook.php</a>	26-Feb-2018 17:10 9.9K
+<a href="httpsserver.py">httpsserver.py</a>	10-May-2017 19:46 743
+<a href="IR_Black.terminal">IR_Black.terminal</a>	10-May-2017 19:46 15K
+<a href="octicons.css">octicons.css</a>	21-Jul-2017 13:41 113K
+<a href="Preferences.sublime-settings">Preferences.sublime-settings</a>	10-May-2017 19:46 391
+<a href="pychrome_demo.py">pychrome_demo.py</a>	11-Jan-2018 15:18 6.6K
+<a href="pychrome_for_tianyancha.py">pychrome_for_tianyancha.py</a>	31-Jan-2018 11:51 6.4K
+<a href="random_words.py">random_words.py</a>	10-May-2017 19:46 686
+<a href="rdpproxy.go">rdpproxy.go</a>	10-May-2017 19:46 1.5K
+<a href="SFTP.sublime-settings">SFTP.sublime-settings</a>	21-May-2018 21:19 89
+<a href="stunnel.conf">stunnel.conf</a>	29-Nov-2017 01:52 467
+<a href="upload.php">upload.php</a>	21-May-2018 21:19 4.0K
+<a href="octicons-css.py">octicons-css.py</a>	10-May-2017 19:46 1.7K
+<a href="sshd_pam_exec.sh">sshd_pam_exec.sh</a>	10-May-2017 19:46 709
 </pre></body></html>
 <!-- autoindex for nginx, see https://phuslu.github.io -->
 <script>
@@ -40,6 +40,10 @@
 		},
 		text: function (t) {
 			this.element.appendChild(document.createTextNode(t))
+			return this
+		},
+		html: function (s) {
+			this.element.innerHTML = s
 			return this
 		},
 		attr: function (k, v) {
@@ -73,8 +77,12 @@
 	var bodylines = document.body.innerHTML.split('\n')
 	document.body.innerHTML = ''
 
+	var titlehtml = document.title.replace(/\/$/, '').split('/').slice(1).reduce(function(acc, v, i, a) {
+		return acc + '<a href="/' + a.slice(0, i+1).join('/') + '/">' + v + '</a>/'
+	}, 'Index of /')
+
 	div = dom.get('div').attr('class', 'container')
-	div.add('table').add('tbody').add('tr').add('th').text(document.title)
+	div.add('table').add('tbody').add('tr').add('th').html(titlehtml)
 	tbody = div.add('table').attr('class', 'table-hover').add('tbody')
 
 	var insert = function(filename, datetime, size) {
@@ -99,7 +107,7 @@
 			datetime = datetime_format
 					.replace('%Y', d.getFullYear())
 					.replace('%m', pad(d.getMonth()+1))
-					.replace('%d', pad(d.getDay()+1))
+					.replace('%d', pad(d.getDate()))
 					.replace('%H', pad(d.getHours()))
 					.replace('%M', pad(d.getMinutes()))
 					.replace('%S', pad(d.getSeconds()))
@@ -247,3 +255,4 @@ table.table-hover > tbody > tr:hover > th {
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' viewBox='0 0 12 16'%3E%3Cpath d='M8.5 1L1 1C0.4 1 0 1.4 0 2L0 14C0 14.6 0.4 15 1 15L11 15C11.6 15 12 14.6 12 14L12 4.5 8.5 1ZM11 14L1 14 1 2 4 2 4 3 5 3 5 2 8 2 11 5 11 14 11 14ZM5 4L5 3 6 3 6 4 5 4 5 4ZM4 4L5 4 5 5 4 5 4 4 4 4ZM5 6L5 5 6 5 6 6 5 6 5 6ZM4 6L5 6 5 7 4 7 4 6 4 6ZM5 8L5 7 6 7 6 8 5 8 5 8ZM4 9.3C3.4 9.6 3 10.3 3 11L3 12 7 12 7 11C7 9.9 6.1 9 5 9L5 8 4 8 4 9.3 4 9.3ZM6 10L6 11 4 11 4 10 6 10 6 10Z' fill='%237D94AE'/%3E%3C/svg%3E");
 }
 </style>
+

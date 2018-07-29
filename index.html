@@ -1,19 +1,19 @@
 <html><head><title>Index of /</title></head><body><pre>
-<a href="contrib/">contrib/</a>	22-May-2018 18:46 4.0K
-<a href="nginx/">nginx/</a>	24-May-2018 11:48 4.0K
-<a href="topic/">topic/</a>	24-May-2018 11:46 4.0K
-<a href="autoindex.html">autoindex.html</a>	12-Apr-2018 01:44 7.0K
-<a href="bashrc">bashrc</a>	08-May-2018 18:38 1.8K
-<a href="cmdhere.cmd">cmdhere.cmd</a>	02-Apr-2018 14:33 2.2K
-<a href="favicon.ico">favicon.ico</a>	02-Apr-2018 14:33 4.2K
-<a href="google.html">google.html</a>	02-Apr-2018 14:33 170
-<a href="markdown.html">markdown.html</a>	02-Apr-2018 14:33 3.7K
-<a href="notepad.php">notepad.php</a>	02-Apr-2018 14:33 4.4K
-<a href="README.md">README.md</a>	12-Apr-2018 01:44 244
-<a href="sysctl.conf">sysctl.conf</a>	07-May-2018 11:37 3.4K
-<a href="tz.php">tz.php</a>	23-May-2018 10:00 30K
-<a href="vimrc">vimrc</a>	01-May-2018 01:03 6.5K
-<a href="wallpaper.html">wallpaper.html</a>	02-Apr-2018 14:33 4.0K
+<a href="contrib/">contrib/</a>	25-May-2018 17:24 4.0K
+<a href="nginx/">nginx/</a>	24-Jun-2018 12:39 4.0K
+<a href="topic/">topic/</a>	25-May-2018 17:24 4.0K
+<a href="autoindex.html">autoindex.html</a>	29-Jul-2018 17:08 7.3K
+<a href="bashrc">bashrc</a>	21-May-2018 21:19 1.8K
+<a href="cmdhere.cmd">cmdhere.cmd</a>	21-May-2018 21:19 2.2K
+<a href="favicon.ico">favicon.ico</a>	10-May-2017 19:46 4.2K
+<a href="google.html">google.html</a>	30-Jan-2018 17:54 170
+<a href="markdown.html">markdown.html</a>	18-Mar-2018 18:02 3.7K
+<a href="notepad.php">notepad.php</a>	10-May-2017 19:46 4.4K
+<a href="README.md">README.md</a>	21-May-2018 21:19 244
+<a href="sysctl.conf">sysctl.conf</a>	21-May-2018 21:19 3.4K
+<a href="tz.php">tz.php</a>	23-May-2018 16:37 30K
+<a href="vimrc">vimrc</a>	21-May-2018 21:19 6.5K
+<a href="wallpaper.html">wallpaper.html</a>	20-Mar-2018 01:38 4.0K
 </pre></body></html>
 <!-- autoindex for nginx, see https://phuslu.github.io -->
 <script>
@@ -36,6 +36,10 @@
 		},
 		text: function (t) {
 			this.element.appendChild(document.createTextNode(t))
+			return this
+		},
+		html: function (s) {
+			this.element.innerHTML = s
 			return this
 		},
 		attr: function (k, v) {
@@ -69,8 +73,12 @@
 	var bodylines = document.body.innerHTML.split('\n')
 	document.body.innerHTML = ''
 
+	var titlehtml = document.title.replace(/\/$/, '').split('/').slice(1).reduce(function(acc, v, i, a) {
+		return acc + '<a href="/' + a.slice(0, i+1).join('/') + '/">' + v + '</a>/'
+	}, 'Index of /')
+
 	div = dom.get('div').attr('class', 'container')
-	div.add('table').add('tbody').add('tr').add('th').text(document.title)
+	div.add('table').add('tbody').add('tr').add('th').html(titlehtml)
 	tbody = div.add('table').attr('class', 'table-hover').add('tbody')
 
 	var insert = function(filename, datetime, size) {
@@ -95,7 +103,7 @@
 			datetime = datetime_format
 					.replace('%Y', d.getFullYear())
 					.replace('%m', pad(d.getMonth()+1))
-					.replace('%d', pad(d.getDay()+1))
+					.replace('%d', pad(d.getDate()))
 					.replace('%H', pad(d.getHours()))
 					.replace('%M', pad(d.getMinutes()))
 					.replace('%S', pad(d.getSeconds()))
@@ -243,3 +251,4 @@ table.table-hover > tbody > tr:hover > th {
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' viewBox='0 0 12 16'%3E%3Cpath d='M8.5 1L1 1C0.4 1 0 1.4 0 2L0 14C0 14.6 0.4 15 1 15L11 15C11.6 15 12 14.6 12 14L12 4.5 8.5 1ZM11 14L1 14 1 2 4 2 4 3 5 3 5 2 8 2 11 5 11 14 11 14ZM5 4L5 3 6 3 6 4 5 4 5 4ZM4 4L5 4 5 5 4 5 4 4 4 4ZM5 6L5 5 6 5 6 6 5 6 5 6ZM4 6L5 6 5 7 4 7 4 6 4 6ZM5 8L5 7 6 7 6 8 5 8 5 8ZM4 9.3C3.4 9.6 3 10.3 3 11L3 12 7 12 7 11C7 9.9 6.1 9 5 9L5 8 4 8 4 9.3 4 9.3ZM6 10L6 11 4 11 4 10 6 10 6 10Z' fill='%237D94AE'/%3E%3C/svg%3E");
 }
 </style>
+
