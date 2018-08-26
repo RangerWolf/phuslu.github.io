@@ -19,7 +19,7 @@ export PS1='\[\e[1;32m\]\u@\h\[\e[0;33m\] \w \[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] 
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PATH=~/.local/bin:$GOPATH/bin:$GOROOT/bin:$PATH
 
-if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm screen rxvt cygwin" == *"$TERM"* ]]; then
+if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm-color xterm screen rxvt cygwin" == *"$TERM"* ]]; then
     eval $(SHELL=/bin/bash $(type -p dircolors))
     bind '"\e[B": history-search-forward'
     bind '"\e[A": history-search-backward'
