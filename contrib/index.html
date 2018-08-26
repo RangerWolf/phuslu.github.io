@@ -22,6 +22,7 @@
 <!-- autoindex for nginx, see https://phuslu.github.io -->
 <script>
 !function(){
+	var website_title = ''
 	var datetime_format = '%d-%b-%Y %H:%M'
 	var show_readme_md = true
 	var max_name_length = 50
@@ -80,6 +81,9 @@
 	var titlehtml = document.title.replace(/\/$/, '').split('/').slice(1).reduce(function(acc, v, i, a) {
 		return acc + '<a href="/' + a.slice(0, i+1).join('/') + '/">' + v + '</a>/'
 	}, 'Index of /')
+	if (website_title) {
+		document.title = website_title + ' - ' + document.title
+	}
 
 	div = dom.get('div').attr('class', 'container')
 	div.add('table').add('tbody').add('tr').add('th').html(titlehtml)

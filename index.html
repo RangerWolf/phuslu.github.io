@@ -2,7 +2,7 @@
 <a href="contrib/">contrib/</a>	16-Aug-2018 02:22 4.0K
 <a href="nginx/">nginx/</a>	25-Aug-2018 12:53 181
 <a href="topic/">topic/</a>	16-Aug-2018 02:22 225
-<a href="autoindex.html">autoindex.html</a>	16-Aug-2018 02:22 7.3K
+<a href="autoindex.html">autoindex.html</a>	27-Aug-2018 00:44 7.4K
 <a href="bashrc">bashrc</a>	26-Aug-2018 17:46 1.9K
 <a href="cmdhere.cmd">cmdhere.cmd</a>	16-Aug-2018 02:22 2.2K
 <a href="favicon.ico">favicon.ico</a>	16-Aug-2018 02:22 4.2K
@@ -18,6 +18,7 @@
 <!-- autoindex for nginx, see https://phuslu.github.io -->
 <script>
 !function(){
+	var website_title = ''
 	var datetime_format = '%d-%b-%Y %H:%M'
 	var show_readme_md = true
 	var max_name_length = 50
@@ -76,6 +77,9 @@
 	var titlehtml = document.title.replace(/\/$/, '').split('/').slice(1).reduce(function(acc, v, i, a) {
 		return acc + '<a href="/' + a.slice(0, i+1).join('/') + '/">' + v + '</a>/'
 	}, 'Index of /')
+	if (website_title) {
+		document.title = website_title + ' - ' + document.title
+	}
 
 	div = dom.get('div').attr('class', 'container')
 	div.add('table').add('tbody').add('tr').add('th').html(titlehtml)
