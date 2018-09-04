@@ -8,7 +8,7 @@ set history=2000
 filetype on
 " Enable filetype plugins
 filetype plugin on
-filetype indent on
+" filetype indent on
 
 " base
 set nocompatible                " don't bother with vi compatibility
@@ -48,12 +48,12 @@ set ignorecase                  " ignore case when searching
 set smartcase                   " no ignorecase if Uppercase char present
 
 " tab
-set expandtab                   " expand tabs to spaces
+" set expandtab                   " expand tabs to spaces
 set smarttab
 set shiftround
 
 " indent
-set smartindent shiftround
+set shiftround
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4                " insert mode tab and backspace use 4 spaces
