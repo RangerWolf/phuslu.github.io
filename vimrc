@@ -95,7 +95,7 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 autocmd BufRead,BufNew *.md,*.mkd,*.markdown  set filetype=markdown.mkd
 
 " disable auto wrap and auto comments
-set formatoptions-=tcro 
+set formatoptions-=cro 
 
 " https://github.com/ryanpcmcquen/fix-vim-pasting
 let &t_SI .= "\<Esc>[?2004h"
