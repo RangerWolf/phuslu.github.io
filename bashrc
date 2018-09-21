@@ -3,6 +3,7 @@
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 # curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+# curl -LOJ https://raw.githubusercontent.com/ofavre/vimcat/master/vimcat && chmod +x vimcat && sudo mv vimcat /usr/bin/
 # sudo yum install -y bash-completion
 if [ "${HOME%/*}" = "/Users" ]; then alias ls='ls -G' ;else alias ls='ls -p --color=auto'; fi
 alias ll='ls -lF'
