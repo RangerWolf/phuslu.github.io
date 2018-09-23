@@ -752,7 +752,7 @@ body {
 </table>
 
 <table class="table table-striped table-bordered table-hover table-condensed">
-	<tr><th colspan="12"><?php __('PHP Information'); ?></th></tr>
+	<tr><th colspan="12"><a href="?method=phpinfo"><?php __('PHP Information'); ?></a></th></tr>
 	<tr>
 	<td style="width:16.7%"><?php __('Version'); ?></td><td><?php echo phpversion(); ?></td>
 	<td style="width:16.7%"><?php __('Zend OpCache'); ?></td><td><?php echo ini_get('opcache.enable') == 1 ? 'On':'Off'; ?></td>
