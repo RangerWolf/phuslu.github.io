@@ -146,14 +146,13 @@
 		}
 		xhr.send()
 
-		div.add('script').attr('src', 'https://cdn.bootcss.com/marked/0.3.6/marked.min.js')
-		div.add('link').attr('rel', 'stylesheet').attr('href', 'https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css')
+		div.add('script').attr('src', 'https://cdn.jsdelivr.net/npm/marked')
+		div.add('link').attr('rel', 'stylesheet').attr('href', 'https://cdn.jsdelivr.net/npm/github-markdown-css')
 	}
 }()
 </script>
 
-<style>
-body {
+<style> body {
 	margin: 0;
 	font-family: "ubuntu", "Tahoma", "Microsoft YaHei", Arial, Serif;
 }
