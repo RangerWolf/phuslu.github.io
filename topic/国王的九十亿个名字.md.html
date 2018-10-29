@@ -63,8 +63,8 @@
 
 	div = dom.get('div').attr('class', 'container')
 
-	div.add('script').attr('src', 'https://cdn.bootcss.com/marked/0.3.6/marked.min.js')
-	div.add('link').attr('rel', 'stylesheet').attr('href', 'https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css')
+	div.add('script').attr('src', 'https://cdn.jsdelivr.net/npm/marked')
+	div.add('link').attr('rel', 'stylesheet').attr('href', 'https://cdn.jsdelivr.net/npm/github-markdown-css')
 
 	title = decodeURIComponent(document.location.pathname.replace(/.*\//, '').replace(/\.html$/, ''))
 	document.title = '《' + title.replace(/\.md$/, '') + '》'
