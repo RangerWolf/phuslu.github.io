@@ -1,9 +1,9 @@
 
 # curl https://phuslu.github.io/bashrc | tee -a ~/.bashrc
+# curl https://phuslu.github.io/vimrc | tee ~/.vimrc
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 # curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-# curl 'https://www.vim.org/scripts/download_script.php?src_id=23422' | sudo tee /usr/bin/vimcat && sudo chmod +x /usr/bin/vimcat
 # sudo yum install -y bash-completion
 if [ "${HOME%/*}" = "/Users" ]; then alias ls='ls -G' ;else alias ls='ls -p --color=auto'; fi
 alias ll='ls -lF'
