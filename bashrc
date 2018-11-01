@@ -4,6 +4,7 @@
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 # curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+# curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz | sudo tar xvz -C /usr/bin/ --strip-components=1 --wildcards --no-anchored rg
 # sudo yum install -y bash-completion
 if [ "${HOME%/*}" = "/Users" ]; then alias ls='ls -G' ;else alias ls='ls -p --color=auto'; fi
 alias ll='ls -lF'
