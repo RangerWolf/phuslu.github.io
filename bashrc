@@ -17,7 +17,7 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 export HISTCONTROL=ignoreboth
 export HISTSIZE=100000
 export HISTFILESIZE=2000000
-export PS1='\[\e[1;32m\]\u@\h\[\e[0;33m\] \w \[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] '
+export PS1='\[\e[1;32m\]\u@\h\[\e[0;33m\] \w \[\e[1;34m\]\$\[\e[0m\] '
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PATH=~/.local/bin:$GOPATH/bin:$GOROOT/bin:$PATH
 
