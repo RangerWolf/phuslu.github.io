@@ -578,7 +578,7 @@ body {
 <div class="container">
 
 <table>
-<?php if ($_SERVER['HTTP_HOST'] == 'phus.lu'): ?>
+<?php if ($_SERVER['HTTP_HOST'] == 'lab.phus.lu'): ?>
 	<tr>
 	<th><a href="?method=phpinfo">PHP Info</a></th>
 	<th><a href="/files/"><?php __('Download'); ?></a></th>
