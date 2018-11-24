@@ -1,6 +1,6 @@
 
 # curl https://phuslu.github.io/bashrc | tee -a ~/.bashrc
-# curl https://phuslu.github.io/vimrc | tee ~/.vimrc
+# curl -fo ~/.vimrc https://phuslu.github.io/vimrc
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 # curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
