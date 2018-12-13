@@ -275,8 +275,8 @@ function get_tempinfo()
 	if ($str = @file('/sys/class/thermal/thermal_zone0/temp'))
 		$info['cpu'] = $str[0]/1000.0;
 
-	if ($str = @file('/sys/class/thermal/thermal_zone10/temp'))
-		$info['gpu'] = $str[0]/1000.0;
+	#if ($str = @file('/sys/class/thermal/thermal_zone10/temp'))
+	#	$info['gpu'] = $str[0]/1000.0;
 
 	return $info;
 }
