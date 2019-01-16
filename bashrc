@@ -2,10 +2,10 @@
 # wget -O- https://phuslu.github.io/bashrc | grep '^# curl' | cut -b3- | bash -xe
 # curl https://phuslu.github.io/bashrc | tee -a ~/.bashrc
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
-# curl -fo ~/.vimrc https://phuslu.github.io/vimrc && sudo cp ~/.vimrc /root
-# curl -fo /tmp/vimcat https://phuslu.github.io/vimcat && sudo mv /tmp/vimcat /usr/bin && sudo chmod +x /usr/bin/vimcat
 # curl -fo ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 # curl -fo ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+# curl -fo ~/.vimrc https://phuslu.github.io/vimrc && sudo cp ~/.vimrc /root
+# curl -fo /tmp/vimcat https://phuslu.github.io/vimcat && sudo mv /tmp/vimcat /usr/bin && sudo chmod +x /usr/bin/vimcat
 # curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz | sudo tar xvz -C /usr/bin/ --strip-components=1 --wildcards --no-anchored rg
 # sudo env $(hash yum && echo yum || echo apt) install -y bash-completion
 if [ "${HOME%/*}" = "/Users" ]; then alias ls='ls -G' ;else alias ls='ls -p --color=auto'; fi
