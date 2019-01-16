@@ -1,5 +1,5 @@
 
-# bashrc installation: curl https://phuslu.github.io/bashrc | grep '^# curl' | cut -b3- | bash -xe
+# wget -O- https://phuslu.github.io/bashrc | grep '^# curl' | cut -b3- | bash -xe
 # curl https://phuslu.github.io/bashrc | tee -a ~/.bashrc
 # curl -fo ~/.z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
 # curl -fo ~/.vimrc https://phuslu.github.io/vimrc && sudo cp ~/.vimrc /root
