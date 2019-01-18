@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+// error_reporting(0);
 
 function __($message) {
 	$messages = array(
@@ -377,12 +377,15 @@ function get_boardinfo()
 		$info['boardVersion'] = '';
 	}
 
-	if ($names=array_filter(scandir("/dev/disk/by-id"), function($k) { return $k[0] != '.' && strpos($k, 'DVD-ROM') === false; }))
+	if (is_dir('/dev/disk/by-id'))
 	{
-		$parts = explode("_", array_shift($names));
-		$parts = explode("-", array_shift($parts), 2);
-		$info['diskVendor'] = strtoupper($parts[0]);
-		$info['diskModel'] = $parts[1];
+		if ($names=array_filter(scandir('/dev/disk/by-id'), function($k) { return $k[0] != '.' && strpos($k, 'DVD-ROM') === false; }))
+		{
+			$parts = explode("_", array_shift($names));
+			$parts = explode("-", array_shift($parts), 2);
+			$info['diskVendor'] = strtoupper($parts[0]);
+			$info['diskModel'] = $parts[1];
+		}
 	}
 
 	return $info;
@@ -584,8 +587,8 @@ body {
 	<tr>
 	<th><a href="?method=phpinfo">PHP Info</a></th>
 	<th><a href="/files/"><?php __('Download'); ?></a></th>
-	<th>ðŸ”’<a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>"><?php __('Gateway'); ?></a></th>
-	<th>ðŸ”’<a href="//grafana.<?php echo $_SERVER['HTTP_HOST'];?>/dashboard/db/system-overview?orgId=1"><?php __('Monitor'); ?></a></th>
+	<th>í ½í´’<a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>"><?php __('Gateway'); ?></a></th>
+	<th>í ½í´’<a href="//grafana.<?php echo $_SERVER['HTTP_HOST'];?>/dashboard/db/system-overview?orgId=1"><?php __('Monitor'); ?></a></th>
 	</tr>
 <?php endif ?>
 </table>
