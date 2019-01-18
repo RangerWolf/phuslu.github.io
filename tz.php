@@ -587,8 +587,8 @@ body {
 	<tr>
 	<th><a href="?method=phpinfo">PHP Info</a></th>
 	<th><a href="/files/"><?php __('Download'); ?></a></th>
-	<th>í ½í´’<a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>"><?php __('Gateway'); ?></a></th>
-	<th>í ½í´’<a href="//grafana.<?php echo $_SERVER['HTTP_HOST'];?>/dashboard/db/system-overview?orgId=1"><?php __('Monitor'); ?></a></th>
+	<th>ðŸ”’<a href="//gateway.<?php echo $_SERVER['HTTP_HOST'];?>"><?php __('Gateway'); ?></a></th>
+	<th>ðŸ”’<a href="//grafana.<?php echo $_SERVER['HTTP_HOST'];?>/dashboard/db/system-overview?orgId=1"><?php __('Monitor'); ?></a></th>
 	</tr>
 <?php endif ?>
 </table>
