@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 function __($message) {
 	$messages = array(
 		'Download' => '文件下载',
