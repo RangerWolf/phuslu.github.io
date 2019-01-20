@@ -8,7 +8,7 @@
 # curl -fo /tmp/vimcat https://phuslu.github.io/vimcat && sudo mv /tmp/vimcat /usr/bin && sudo chmod +x /usr/bin/vimcat
 # curl -L https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz | sudo tar xvz -C /usr/bin/ --strip-components=1 --wildcards --no-anchored rg
 # sudo env $(hash yum && echo yum || echo apt) install -y bash-completion
-if [ "${HOME%/*}" = "/Users" ]; then alias ls='ls -G' ;else alias ls='ls -p --color=auto'; fi
+test "${HOME%/*}" = "/Users" && alias ls='ls -G' || alias ls='ls -p --color=auto'
 alias ll='ls -lF'
 alias rm='rm -i'
 alias mv='mv -i'
@@ -33,7 +33,7 @@ if [ "${SHELL##*/}" = "bash" ]; then if [[ "xterm-256color xterm-color xterm scr
     shopt -s checkwinsize histappend
     export PS1='\[\e]0;\h:\w\a\]\n\[\e[1;32m\]\u@\h\[\e[0;33m\] \w \[\e[0m[\D{%H:%M:%S}]\n\[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] '
     if grep --version >/dev/null 2>&1 ; then alias grep='grep --color'; fi
-    for f in /usr/share/bash-completion/bash_completion ~/.z.sh ~/.git-completion.bash ~/.git-prompt.sh; do if [ -f $f ]; then source $f; fi; done
+    for f in /usr/share/bash-completion/bash_completion ~/.z.sh ~/.git-completion.bash ~/.git-prompt.sh; do test -f $f && . $f; done
     if type -p __git_ps1; then export PS1='\[\e]0;\h:\w\a\]\n\[\e[1;32m\]\u@\h\[\e[0;33m\] \w$(__git_ps1 " (%s)") \[\e[0m[\D{%H:%M:%S}]\n\[\e[1;$((31+3*!$?))m\]\$\[\e[0m\] '; fi
 fi fi
 
